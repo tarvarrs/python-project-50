@@ -19,3 +19,4 @@ def main():
 
 if __name__ == 'main':
 	main()
+# TODO: распарсить библиотекой json файлы в словарь
