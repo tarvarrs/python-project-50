@@ -11,7 +11,6 @@ def generate_diff(file1, file2):
     for key in keys_set:
         value1 = file1.get(key)
         value2 = file2.get(key)
-    
         if value2 is None:
             res += f'  - {key}: {str(value1)}\n'
         elif value1 is None:
@@ -24,5 +23,3 @@ def generate_diff(file1, file2):
                 res += f'  + {key}: {str(value2)}\n'
     res += '}'
     return res
-
-#generate_diff('./file1.json', './file2.json')
