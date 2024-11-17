@@ -1,4 +1,4 @@
-from parser import parse_file
+from gendiff.scripts.parse_file import parse_file
 
 
 def generate_diff(file1, file2):
