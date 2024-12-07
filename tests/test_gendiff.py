@@ -1,28 +1,35 @@
-from gendiff.scripts.generate_diff import generate_diff
-
-with open('./tests/fixtures/expected_output.txt', 'r', encoding="utf-8") as file:
-    expected = file.read()
+from gendiff.scripts.gendiff import generate_diff
 
 
-def test_gendiff_json():
-    got = generate_diff('./tests/fixtures/file1.json', './tests/fixtures/file2.json')
+path1_json = './tests/fixtures/file1.json'
+path2_json = './tests/fixtures/file2.json'
+path1_yaml = './tests/fixtures/file1.yaml'
+path2_yaml = './tests/fixtures/file2.yaml'
+
+
+# with open('./tests/fixtures/expected_plain_output.txt', 'r', encoding="utf-8") as file:
+#     expected = file.read()
+
+
+# def test_gendiff_plain_json():
+#     got = generate_diff(path1_json, path2_json)
+#     assert got == expected
+
+
+# def test_gendiff_plain_yaml():
+#     got = generate_diff(path1_yaml, path2_yaml)
+#     assert got == expected
+
+
+with open('./tests/fixtures/expected_stylish_output.txt', 'r', encoding="utf-8") as file:
+    expected = file.read().strip()
+
+
+def test_gendiff_stylish_json():
+    got = generate_diff(path1_json, path2_json)
     assert got == expected
 
 
-def test_gendiff_yaml():
-    got = generate_diff('./tests/fixtures/file1.yml', './tests/fixtures/file2.yaml')
-    assert got == expected
-
-
-with open('./tests/fixtures/expected_tree_output.txt', 'r', encoding="utf-8") as file:
-    expected = file.read()
-
-
-def test_gendiff_tree_json():
-    got = generate_diff('./tests/fixtures/file1_tree.json', './tests/fixtures/file2_tree.json')
-    assert got == expected
-
-
-def test_gendiff_tree_yaml():
-    got = generate_diff('./tests/fixtures/file1_tree.yaml', './tests/fixtures/file2_tree.yaml')
+def test_gendiff_stylish_yaml():
+    got = generate_diff(path1_yaml, path2_yaml)
     assert got == expected
