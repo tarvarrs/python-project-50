@@ -1,7 +1,8 @@
 import argparse
 from gendiff.scripts.parse_file import parse_file
 from gendiff.scripts.find_diff import find_diff
-from gendiff.scripts.stylish import stylish
+from gendiff.formatters.stylish import stylish
+from gendiff.formatters.plain import plain
 
 FORMATTERS = ['stylish']
 
@@ -9,9 +10,12 @@ FORMATTERS = ['stylish']
 def generate_diff(file1, file2, formatter='stylish'):
     data1 = parse_file(file1)
     data2 = parse_file(file2)
+    raw_diff = find_diff(data1, data2)
     match formatter:
         case 'stylish':
-            diff = stylish(find_diff(data1, data2))
+            diff = stylish(raw_diff)
+        case 'plain':
+            diff = plain(raw_diff)
     
     return diff
 
