@@ -16,7 +16,7 @@ dependencies = [
     "makefile<2.0.0,>=1.1.0",
     "flake8<7.0.0,>=6.1.0",
     "pytest-cov<5.0.0,>=4.1.0",
-    "pytest<8.0.0,>=7.4.2",
+    "pytest",
     "pyyaml<7.0.0,>=6.0.2",
 ]
 name = "hexlet-code"
