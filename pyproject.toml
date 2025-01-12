@@ -25,4 +25,4 @@ description = ""
 readme = "README.md"
 
 [project.scripts]
-gendiff = "gendiff.scripts.generate_diff:main"
+gendiff = "gendiff.scripts.gendiff:main"
