@@ -33,3 +33,16 @@ def test_gendiff_stylish_json():
 def test_gendiff_stylish_yaml():
     got = generate_diff(path1_yaml, path2_yaml)
     assert got == stylish_expected
+
+with open('./tests/fixtures/expected_json_output.json', 'r', encoding='utf-8') as f:
+    json_expected = f.read().strip()
+
+
+def test_gendiff_json_json():
+    got = generate_diff(path1_json, path2_json, 'json')
+    assert got == json_expected
+
+
+def test_gendiff_json_yaml():
+    got = generate_diff(path1_yaml, path2_yaml, 'json')
+    assert got == json_expected
