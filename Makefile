@@ -1,19 +1,19 @@
 install:
-	poetry install
+	uv install
 
 lint:
-	poetry run flake8 gendiff
+	uv run flake8 gendiff
 
 check:
 
 test:
-	poetry run pytest
+	uv run pytest
 
 build:
-	poetry build
+	uv build
 
 publish:
-	poetry publish --dry-run
+	uv publish --dry-run
 
 package-install:
 	python3 -m pip install --user dist/*.whl
