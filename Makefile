@@ -1,5 +1,5 @@
 install:
-	uv install
+	uv pip install
 
 lint:
 	uv run flake8 gendiff
