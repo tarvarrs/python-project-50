@@ -5,6 +5,7 @@ lint:
 	uv run flake8 gendiff
 
 check:
+	uv run flake8 gendiff
 
 test:
 	uv run pytest
